@@ -52,7 +52,6 @@ C:\Users\Murilo Formiga\Documents\Projetos Unity\Caju Play\obj\Debug\Assembly-CS
 C:\Users\Murilo Formiga\Documents\Projetos Unity\Caju Play\obj\Debug\Assembly-CSharp.pdb
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\obj\Debug\Assembly-CSharp.dll
-C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\obj\Debug\Assembly-CSharp.pdb
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\nunit.framework.dll
@@ -81,3 +80,4 @@ C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\nunit.framewor
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\Temp\bin\Debug\UnityEngine.VR.xml
+C:\Users\Murilo Formiga\Documents\GitHub\Caju-Play\obj\Debug\Assembly-CSharp.pdb

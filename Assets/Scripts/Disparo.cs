@@ -1,37 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Disparo : MonoBehaviour {
-
-	public GameObject indicador;
+public  class Disparo : MonoBehaviour {
+    
 	public GameObject projetil;
-
-	public float forcaLancamento = 15f;
-	public float distanciaMaxima = 3f;
+	public GameObject indicador;
 
 	Vector2 posicaoMouse;
-	GameObject instanciaTemporaria;
-	bool instanciado = false;
+	GameObject indicadorTemporario;
+	bool indicadorInstanciado = false;
 
-	void Update () {
+	// Use this for initialization
+	void Start () {
 
+
+	}
+
+	// Update is called once per frame
+	void FixedUpdate () {
+		posicaoMouse = Camera.main.ScreenPointToRay(Input.mousePosition).GetPoint(0);
 		if (Input.GetMouseButton (0)) {
-			posicaoMouse = Camera.main.ScreenPointToRay (Input.mousePosition).GetPoint(0);
-			if (instanciado == false) {
-				instanciado = true;
-				instanciaTemporaria = Instantiate (indicador, posicaoMouse, transform.rotation) as GameObject;
-				instanciaTemporaria.GetComponent<Rigidbody2D> ().isKinematic = true;
+			if (indicadorInstanciado == false) {
+				indicadorInstanciado = true;
+				indicadorTemporario = Instantiate (indicador, posicaoMouse, transform.rotation) as GameObject;
+				//indicadorTemporario.GetComponent<Rigidbody2D> ().isKinematic = true;
 			}
-			instanciaTemporaria.transform.position = posicaoMouse;
+			indicadorTemporario.transform.position = posicaoMouse;
 		}
 
-		if (Input.GetMouseButtonUp (0) && instanciado == true) {
-			Vector2 direcaoForca = transform.position - instanciaTemporaria.transform.position;
-			//instanciaTemporaria.GetComponent<Rigidbody2D> ().isKinematic = false;
-			projetil.GetComponent<Rigidbody2D> ().isKinematic = false;
-			projetil.GetComponent<Rigidbody2D> ().AddForce (direcaoForca * forcaLancamento, ForceMode2D.Impulse);
-			instanciado = false;
-			Destroy (instanciaTemporaria);
+		if (Input.GetMouseButtonUp (0)) {
+			Destroy(indicadorTemporario);
+			indicadorInstanciado = false;
+			Atirar ();
 		}
+	}
+
+	void Atirar () {
+
+		GameObject projetilTemporario = Instantiate (projetil) as GameObject;
+		Vector2 direcaoForca = this.transform.position - indicadorTemporario.transform.position;
+		projetilTemporario.GetComponent<Rigidbody2D>().AddForce(direcaoForca * 5/*forcaLancamento*/, ForceMode2D.Impulse);
 	}
 }
